@@ -2,6 +2,8 @@ import React from 'react';
 import './Kuvat.css'
 import { useState } from 'react';
 import Galleri from '../Gallery/Gallery';
+import PhotoGallery from '../droopboxGallery/PhotoGallery';
+
 
 function Kuvat() {
     const [isKuvaShow, setIsKuvaShow] = useState(false);
@@ -50,7 +52,9 @@ function Kuvat() {
             {isKuvaShow &&
                 <div className='imageDivKuvat'>
                     <img className='kuva' src={kuvaData} onClick={delteImage} alt='Kuva' />
+              
                 </div>}
+                <PhotoGallery></PhotoGallery>
         </>
     );
 }
