@@ -1,23 +1,28 @@
-import React from 'react'
-import './Gallery.css'
+import React from 'react';
+import './Gallery.css';
 
-function Galleri(props) {
+function Galleri({ tyoNimi, kuvat, onPhotoClick }) {
     return (
         <>
-          <meta name='robots' content='index , follow' />
-            <h3 style={{textAlign: 'center'}}>{props.tyoNimi}</h3>
-              <div className='galleryMainDiv'>
-   
-                {props.kuvat.map((kuva) => {
-                    return (        
-                        <div className='galleryDiv1'>                   
-                           <img className='gallery' src={kuva} alt="Cinque Terre" onClick={() => props.onPhotoClick(kuva) } name={kuva}  style={{cursor: 'pointer'}}/>             
+            <meta name='robots' content='index , follow' />
+            <h3 style={{ textAlign: 'center' }}>{tyoNimi}</h3>
+            <div className='galleryMainDiv'>
+                {kuvat.length === 0 ? (
+                    <p>Загрузка изображений...</p>
+                ) : (
+                    kuvat.map((kuva, index) => (
+                        <div className='galleryDiv1' key={index}>                   
+                            <img className='gallery' 
+                                 src={kuva} 
+                                 alt={`Фото ${index}`} 
+                                 onClick={() => onPhotoClick(kuva)} 
+                                 style={{ cursor: 'pointer' }} 
+                            />    
                         </div>
-                        
-                    )
-                })}
+                    ))
+                )}
             </div>
-            <hr style={{borderWidth: '3px'}}/>
+            <hr style={{ borderWidth: '3px' }}/>
         </>
     );
 }

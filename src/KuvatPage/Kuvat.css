@@ -1,12 +1,117 @@
-.imageDivKuvat{
+.imageDivKuvat {
     width: 100%;
     margin: auto;
     text-align: center;
-    max-height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px; /* Отступ сверху, чтобы фото не прилипали к навигации */
+    margin-bottom: 50px; /* Отступ снизу, чтобы отделить футер */
+    padding: 0 10px; /* Добавляем отступы по бокам */
 }
 
+.kuva {
+    width: 100%; /* Изображения занимают всю ширину */
+    max-width: 100%;
+    max-height: 80vh; /* Ограничиваем максимальную высоту 80% от высоты экрана */
+    height: auto; /* Сохраняем пропорции изображения */
+    object-fit: contain; /* Сохраняем пропорции и при этом изображение будет адаптироваться */
+    border-radius: 10px; /* Закругление углов */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Тень для красоты */
+    transition: transform 0.3s ease-in-out;
+}
 
-.kuva{
-    max-height: 800px;
-    max-width: 95%;
+.kuva:hover {
+    transform: scale(1.05); /* Лёгкое увеличение при наведении */
+}
+
+.Footer {
+    width: 100%;
+    background-color: rgb(70, 70, 79);
+    font-weight: 600;
+    padding: 10px;
+    color: azure;
+    text-align: center; /* Центрируем текст футера */
+    margin-top: 50px; /* Отступ сверху, чтобы не сливался с контентом */
+}
+
+.pNavBar {
+    font-size: 14px;
+    font-weight: 200;
+    text-align: center; /* Выравниваем элементы в плагине навигации */
+}
+
+.autocolums {
+    column-count: 2;
+}
+
+.navbar-nav .nav-link {
+    padding-left: 12px;
+}
+
+.naviBar {
+    position: fixed;
+    z-index: 1;
+    padding-left: 0px;
+    width: 100%;
+    background-color: #0b0a17c1;
+    box-shadow: 10px rgba(0, 0, 0, 0.9);
+    font-size: 20px;
+}
+
+.container {
+    width: 90%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.navbartext {
+    padding: 10px;
+    color: rgb(0, 0, 0);
+}
+
+.Logo {
+    box-shadow: 3px 3px 3px 3px rgb(0, 0, 0, 0.5);
+    margin-bottom: 1px;
+    margin-left: 10px;
+    width: 90px;
+}
+
+.navbar-toggler {
+    justify-content: flex-end;
+    margin-left: 10px;
+    margin-top: 10px;
+    border: 2px solid rgb(240, 248, 255);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28240, 248, 255, 0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.pName {
+    margin-top: 10px;
+    font-size: 19px;
+    font-weight: 550;
+    float: right;
+    color: white;
+}
+
+.mr-auto, a {
+    color: aliceblue;
+}
+
+@media screen and (max-width: 767px) {
+    .Logo {
+        box-shadow: 3px 3px 3px 3px rgb(0, 0, 0, 0.5);
+        margin-bottom: 0px;
+        margin-right: 10px;
+        width: 70px;
+    }
+
+    .pNavBar {
+        font-size: 11px;
+        font-weight: 200;
+        margin-right: 10px;
+    }
 }
