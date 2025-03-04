@@ -1,7 +1,6 @@
 import React from 'react';
 import './Kuvat.css'
 import { useState } from 'react';
-import Galleri from '../Gallery/Gallery';
 import PhotoGallery from '../droopboxGallery/PhotoGallery';
 
 function Kuvat() {
@@ -20,7 +19,7 @@ function Kuvat() {
 
     return (
         <>
-            <h1 style={{ paddingTop: "100px" }}></h1>
+            <h1 style={{ paddingTop: "100px" }} aria-hidden="true"></h1>
             {!isKuvaShow &&
                 <div>
                     <PhotoGallery onPhotoClick={handlerPhotoClick} />
