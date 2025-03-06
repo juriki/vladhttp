@@ -33,7 +33,7 @@ const PhotoGallery = ({ onPhotoClick }) => {
       });
 
       const data = await response.json();
-      if (!response.ok) throw new Error(JSON.stringify(data));
+      if (!response.ok) throw new Error(data.error_description || 'Ошибка получения ссылки');
 
       return data.link;
     } catch (error) {
@@ -57,7 +57,7 @@ const PhotoGallery = ({ onPhotoClick }) => {
       });
 
       const data = await response.json();
-      if (!response.ok) throw new Error(JSON.stringify(data));
+      if (!response.ok) throw new Error(data.error_description || 'Ошибка загрузки фотографий');
 
       const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp'];
       const imageFiles = data.entries.filter(file =>
@@ -101,7 +101,7 @@ const PhotoGallery = ({ onPhotoClick }) => {
       });
 
       const data = await response.json();
-      if (!response.ok) throw new Error(JSON.stringify(data));
+      if (!response.ok) throw new Error(data.error_description || 'Ошибка загрузки папок');
 
       const folders = data.entries.filter(item => item[".tag"] === "folder");
 
