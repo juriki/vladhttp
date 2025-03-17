@@ -23,3 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 public/logo192.png
 public/logo192.png
+
+# Local Netlify folder
+.netlify
