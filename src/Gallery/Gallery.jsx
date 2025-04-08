@@ -27,5 +27,4 @@ function Galleri({ tyoNimi, kuvat, onPhotoClick }) {
         </>
     );
 }
-
 export default Galleri;
