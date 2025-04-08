@@ -20,7 +20,7 @@ module.exports.handler = async function(event) {
       method: 'POST',
       headers: {
         'Authorization': authHeader,
-        'Content-Type': 'application/x-www-form-urlencoded',
+        'Content-Type': 'application/x-www-form-urlencoded', 
       },
       body: new URLSearchParams({
         grant_type: 'refresh_token',
