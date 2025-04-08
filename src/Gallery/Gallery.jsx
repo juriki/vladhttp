@@ -1,6 +1,6 @@
 import React from 'react';
 import './Gallery.css';
-import LazyImage from '../droopboxGallery/LazyImage';
+
 
 function Galleri({ tyoNimi, kuvat, onPhotoClick }) {
     return (
